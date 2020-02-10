@@ -1,15 +1,17 @@
 import React from 'react';
 import ColorBox from './components/ColorBox';
-import ColorContext from './contexts/color';
+import { ColorProvider } from './contexts/color';
+import SelectColros from './components/SelectColors';
 
 // Provider를 사용할 때는 항상 value를 명시해 주어야 함
 function App() {
   return (
-    <ColorContext.Provider value={{ color: 'red' }}>
+    <ColorProvider>
       <div>
+        <SelectColros />
         <ColorBox />
       </div>
-    </ColorContext.Provider>
+    </ColorProvider>
   );
 }
 
